@@ -1,5 +1,5 @@
 # JBDL-73
-Source code for GFG Java Backend Development live classes 
+Important links
 
 1. **Java** 
     Download - https://www.oracle.com/in/java/technologies/javase-downloads.html 
