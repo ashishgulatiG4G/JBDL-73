@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 class Student implements Comparable<Student>{
     int marks;
@@ -16,8 +14,8 @@ class Student implements Comparable<Student>{
     }
 };
 
-//class Movie implements Comparable<Movie>{
-class Movie {
+class Movie implements Comparable<Movie>{
+//class Movie {
     public double getRating() {
         return rating;
     }
@@ -52,11 +50,17 @@ class Movie {
         this.year = year;
     }
 
-//    @Override
-//    public int compareTo(Movie o) {
-////        System.out.println(this.toString() + " : " + o.toString());
-//        return (int) (this.rating - o.rating);
-//    }
+    @Override
+    public int compareTo(Movie o) {
+//        System.out.println(this.toString() + " : " + o.toString());
+        if(this.getYear() > o.getYear()) {
+            return 1;
+        }
+        if(this.getYear() < o.getYear()) {
+            return -1;
+        }
+        return 0;
+    }
 
     @Override
     public String toString() {
@@ -81,10 +85,17 @@ class YearCompare implements Comparator<Movie> {
     }
 }
 
+class HeapComparator implements Comparator<Integer> {
+
+    @Override
+    public int compare(Integer a, Integer b) {
+        return b-a;
+    }
+}
+
 
 
 public class Main {
-
 
 
     public static void main(String[] args) {
@@ -135,9 +146,93 @@ public class Main {
 
         Collections.sort(movies, yearCompare);
 
-        for(Movie movie : movies) {
+        for (Movie movie : movies) {
             System.out.println(movie.toString());
         }
+
+
+    /*
+     Queue -> FIFO
+
+     Q -> Given a list of integers and a value 'k', we need to find the kth largest number
+     L = [1,2,3,5,7,10,4,8,3,2,20]
+
+     1. sort and take out list[n-k] -> O(nlogn)
+
+     2. max heap -> size n
+         insert all the elements -> O(n)
+         removal ef element -> O(logn) -> k elements -> O(klogn)
+
+         O(n + klogn) -> O(nlogn)
+
+      3. min heap of size k
+
+        jth index = [minHeap => k largest elements till this index]
+
+
+        L = [1,2,3,5,7,10,4,8,3,2,20]
+        k = 4
+
+        j = 4 => 2, 3, 5, 7
+        j = 5 => 3, 5, 7, 10
+        .
+        .
+        .
+        j = 10 => 7, 8, 10, 20
+
+
+        heap = [1, 2, 3, 5] => [heap.size == k && arr[j] > heap.peek()] =>
+                            => remove top element => insert the new element
+
+
+       TODO = write code and time complexity
+
+
+
+
+
+
+
+
+
+     */
+
+        HeapComparator heapComparator = new HeapComparator();
+
+    Queue<Integer> queue = new PriorityQueue<>(heapComparator);
+
+    // Heap => Max heap, Min heap
+//        L = [1,2,3,5]
+
+
+    List<Integer> list = Arrays.asList(5,3,2,1,25,27);
+
+    for(Integer el : list) {
+        queue.add(el);
+        System.out.println(queue.peek());
+//        System.out.println(queue.size());
+    }
+
+
+
+
+
+    /*
+
+
+
+
+
+
+
+     */
+
+        System.out.println(SingletonDP.getInstance());
+        System.out.println(SingletonDP.getInstance());
+        System.out.println(SingletonDP.getInstance());
+        System.out.println(SingletonDP.getInstance());
+
+
 
     }
 }

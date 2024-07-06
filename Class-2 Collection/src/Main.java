@@ -371,6 +371,15 @@ public class Main {
 
 
 
+    Q-8. Given a list of meeting time intervals represented by start and end times (e.g., [(1, 3), (2, 6), (8, 10)]), write a Java program that merges overlapping intervals into a minimum number of non-overlapping intervals
+        Example:
+            Input: intervals = [(1, 3), (2, 6), (8, 10), (15, 18)]
+            Output: mergedIntervals = [(1, 6), (8, 10), (15, 18)]
+
+
+          -   -   -   -   -   -   -
+          0   1   2   3   4   5   6   7   8   9   10  11  12
+
 
      */
 
