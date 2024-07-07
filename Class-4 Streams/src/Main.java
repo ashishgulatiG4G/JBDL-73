@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -145,8 +146,30 @@ for(every i) {
                 sum += s*s;
             }
         }
+
+/*
+        Given a list of integers, find the maximum value element present in it using Stream functions
+      */
+//        long count = list.stream().max((a, b) -> a-b).orElse(-1);
+//
+//        System.out.println(count);
+//
+
+
+//        perform cube on list elements and filter numbers greater than 50.
+
+
+        List<Integer> list1 = list.stream()
+                .map(n -> n*n*n)
+                .filter(n -> n > 50)
+                .toList();
+        System.out.println(list1);
+
+
+
         return sum;
     }
+
 
 
 
@@ -154,9 +177,7 @@ for(every i) {
 }
 
 
-// Given a list of integers, find the total number of elements present in the list using Stream functions?
-
-//Given a list of integers, find out all the even numbers that exist in the list using Stream functions?
+// Given a list of integers, find the total number of elements present in the list using Stream functions? ->
 
 //Given a list of integers, find the maximum value element present in it using Stream functions
 
