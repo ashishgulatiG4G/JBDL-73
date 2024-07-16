@@ -1,0 +1,18 @@
+1. Clean : Deletes the target folder / bytecode
+
+2. Validate -> Validates whether project structure is in place
+
+3. Compile -> Compiles the source code and generates target directory (won't run test files)
+
+4. Test -> Test the compiled source code and also the testing files
+        -> using testing framework
+
+5. Package -> Takes the compiled source code and package it in distributable format (JAR) and puts it in target folder
+
+6. Verify -> verify whether we have a JAR created or not
+
+7. Install -> Install/add the package into local repo (.m2), for using it in some other project
+
+8. Site
+
+9. Deploy -> Copies the final package and push it to remoye repo for sharing with others
