@@ -35,6 +35,12 @@ public class Main {
         MultipleTryCatch multipleTryCatch = new MultipleTryCatch();
         multipleTryCatch.check();
 
+        finall Finall = new finall();
+        Finall.check();
+
+        throwsKeyWord throwsKeyWord1 = new throwsKeyWord();
+        throwsKeyWord1.check();
+
 
 
     }
