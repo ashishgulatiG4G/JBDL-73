@@ -1,0 +1,10 @@
+1. Exception Handling (Notes added to repo)
+    1. Unchecked Exceptions and Checked Exceptions
+    2. try-catch block (nested as well)
+    3. default exception handler and flow of exceptions
+    4. throw keyword
+    5. finally
+    6. throws keyword
+
+2. Object Class -> hashcode, toString()
+3. Hashmap implementation
