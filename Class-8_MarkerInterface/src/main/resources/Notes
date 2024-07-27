@@ -1,0 +1,19 @@
+Types of Interface ->
+    1. Normal Interface
+    2. Functional Interface -> one abstract method
+    3. Marker Interface -> Doesn't contain any method, field or constants
+            It helps to deliver some run time information to compiler
+
+            Ex -> Serializable, Cloneable
+
+
+        Serializable Interface
+
+            Serialization -> Converting Object to a byte stream which can be written to a file
+                        Object State -> File or database
+
+            Deserialization-> Converting byte stream to object
+                        Reading from file or db and converting it into object state
+
+
+
