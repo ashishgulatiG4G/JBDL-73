@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         // mysql -> Database
 
@@ -45,10 +45,21 @@ url : jdbc:mysql://localhost:3306/test
 
         String sqlQuery = "CREATE TABLE person(id int, name varchar(17))";
 
-        Connection connection = DriverManager.getConnection(url, "root", "Ashish123@");
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection(url, "root", "Ashish123@");
+            Statement statement = connection.createStatement();
+            statement.execute(sqlQuery);
+        } catch (SQLException e) {
+            System.out.println("Exception occured");
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
-        Statement statement = connection.createStatement();
-        statement.execute(sqlQuery);
 
 
 

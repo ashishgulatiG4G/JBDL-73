@@ -1,0 +1,71 @@
+Thread Scheduler ->
+    Decides which thread to execute or which thread to wait [who will get the CPU]
+
+    Thread Priority and Time of arrival
+
+
+Thread scheduling algo's
+
+    1. FCFS -> [t1 -> 0, t2 -> 1, t3 -> 2, t4-> 3] => Non preemptive => infinite blocking (starvation)
+    2. Time slicing scheduling ->
+        time slices , lets say for 2 mins
+
+        at time T0 = [t1, t3] runnable state
+
+        each thread will be moved to running state for 2 mins
+
+    3. Preemptive priority Scheduling ->
+
+
+        at time T0 = [t1, t3, t2, t4] runnable state
+        t1 - 7
+        t2 - 5
+        t3 - 5
+        t4 - 2
+
+
+Java Thread Scheduler ->
+
+    5 threads -> different arrival time, diff priority
+
+    Scheduler will decide who will get the CPU
+
+    1. highest priority first, execute it => another thread comes which has higher priority => current thread is pre-empted from the CPU(processor)
+    2. same priority -> FCFS basis with preemption
+
+
+
+-> Daemon threads -> Service provider threads, its life depends if there are others
+    threads to provide service for
+    garbage collector
+
+
+-> Java thread pool -> Group of threads (worker), reused many times
+            -> fixed size group is created
+            -> at a moment, a thread from the pool is picked up and assigned a job by executor sevice
+
+
+-> Thread groups -> In java we can multiple thread in a single object
+        -> resume or interrupt the group by a single class
+
+
+
+-> Synchronization in JAVA ->
+
+        The capability to control the access of a shared resource by multiple threads
+
+
+        Consistency problem
+
+        Process sync
+        Thread synchronisation <-
+
+
+    Mutual Exlusion -> helps to keep threads from interfering with each other on a shared data
+
+        3 ways ->
+
+            1. Using synchronised method
+            2. By using synchronised block
+            3. Static synchronisation
+

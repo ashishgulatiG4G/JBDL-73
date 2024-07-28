@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a741bda-9c1e-41ed-9f83-6fa7788ea8f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Class-6 Maven/src/main/resources/Maven Lifecycle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Class-6 Maven/src/test/java/org/example/CalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,43 +48,43 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "ashishgulatiG4G"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ashishgulatiG4G&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/ashishgulatiG4G/JBDL-73.git",
-    "accountId": "c299316c-2a24-4a4d-8fd7-f115ade6e71a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ashishgulatiG4G/JBDL-73.git&quot;,
+    &quot;accountId&quot;: &quot;c299316c-2a24-4a4d-8fd7-f115ade6e71a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2jFBe5Maf3cx2xornccrKLi6dt2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Class-6_Gradle [assemble].executor": "Run",
-    "Gradle.Class-6_Gradle [buildDependents].executor": "Run",
-    "Gradle.Class-6_Gradle [buildNeeded].executor": "Run",
-    "Gradle.Class-6_Gradle [build].executor": "Run",
-    "Gradle.Class-6_Gradle [classes].executor": "Run",
-    "Gradle.Class-6_Gradle [clean].executor": "Run",
-    "Gradle.Class-6_Gradle [jar].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Class-6_Gradle [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [buildNeeded].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [classes].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Class-6_Gradle [jar].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.Class-6_Gradle [jar]">
     <configuration name="Class-6_Gradle [buildNeeded]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
