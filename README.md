@@ -9,6 +9,8 @@
     - Download - https://www.oracle.com/in/java/technologies/javase-downloads.html 
     - Resources - https://www.baeldung.com/ , https://www.youtube.com/channel/UCYt1sfh5464XaDBH0oH_o7Q
     - JDK,JRE,JVM - https://www.geeksforgeeks.org/differences-jdk-jre-jvm/
+3. **Spring Initializr** : https://start.spring.io/
+4. **Postman** : https://www.postman.com/downloads/
 
 # Assignments
 
