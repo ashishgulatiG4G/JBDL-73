@@ -1,0 +1,79 @@
+1. Maven
+2. Client-Server
+3. Embedded Server code (Tomcatt)
+4. Rest API's
+
+
+Server -> API's [Contract]
+
+Server -> Controller [API's]
+
+REST API's
+
+REST [Representational State Transfer]
+    1. Stateless -> Each request is independent, it contains all the info
+    2. Client Server Architecture
+    3. Uniform Interface of HTTP methods [POST, GET, PUT, DELETE] and also status codes
+
+
+    How it works :
+        1. Client make a request [using HTTP methods like POST, GET, PUT, DELETE]
+        2. Server processes the request and generate response
+        3. Server sends the response with status code and in a format like JSON, XML
+
+SOAP [Simple Object Access protocol]
+    -> XML
+    -> supports HTTP but also supports other protocols
+    -> Protocol - based, message oriented
+
+
+CRUD ->
+C -> Create
+R -> Read
+U -> Update
+D -> Delete
+
+HTTP Request Methods ->
+1. GET -> Generally used for read operation ,i.e, operations should not change the data on server
+2. POST -> Create/Write new data
+3. PUT -> Generally used for update ops
+4. DELETE -> Deleting the data
+5. PATCH -> Sending few of the fields (few columns will be modified)
+
+
+@RestController will make a java class as a rest controller
+Spring Boot will consider these classes as handlers for API's
+
+@GetMapping -> This annotation will make a function act as a HTTP GET request handler
+@PostMapping
+
+
+NOTE -> You can't have 2 api's with same path
+
+
+
+Two common ways to pass data to a REST API endpoint (in the URL itself)->
+1. Path Variable
+    Embedded in URL
+    /{name} or /{id}
+    Ex - Get a specific user -> getUserWithId -> /users/{userId}
+
+
+2. Request Params
+    Appended to a URL after a question mark ?
+    Used for filtering, sorting, pagination
+    Ex - Get a list of users with some filter, name = john & age = 25
+        /users?name=john&age=25
+
+
+@RequestBody -> json type request body
+
+
+
+
+
+
+
+
+Postman
+
