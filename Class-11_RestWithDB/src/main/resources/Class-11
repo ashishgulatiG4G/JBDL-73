@@ -1,0 +1,7 @@
+Storing the data locally would get cleared on application/server restart
+and Data would get lost
+
+That's why we need
+Data Persistence
+
+Database
