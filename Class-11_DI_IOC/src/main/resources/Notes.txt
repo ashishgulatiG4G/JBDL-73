@@ -1,0 +1,82 @@
+Agenda of todays class ->
+
+1. IOC
+2. Dependency Injection
+
+1. Drive via your own car
+2. Someone else can drop you without any charges
+
+Coding->
+
+
+
+1. IOC
+
+For them you need to create objects
+
+1. You can create a Java Object of class yourself
+2. Spring creates it for you -> More better
+
+We will want the spring to handle object lifecyle for us, initialise, destruction and de-initialise
+
+Object which spring will create for us -> Bean / Spring Bean
+
+C1
+C2          -> @Component (Diectly or indirectly) -> Bean will be created
+C3
+C4
+C5
+
+IOC -> Inversion of control -> Phenomenon by which spring creates an object for us instead of we manually create those
+objects
+
+And after creating the objects -> IOC container / Application Context / Spring Context
+
+IOC container is represented by application context in the code
+
+
+To Summarise ->
+Bean creation -> IOC
+Bean gets stored -> IOC container / Application Context
+
+Any clas with @Component annotation, directly or indirectly -> Spring will create beans/objects
+
+Quest-> Does the SpringBootApplication (Main Application) qualifies to be a bean
+
+ComponentScan ->
+Checks for all the classes which are marked as @Component -> Using IOC (Bean creation) -> IOC container
+
+
+2 pillars in Spring ->
+1. IOC (Creation of beans) -> @Component
+2. DI (Retrieval of beans) -> @Autowired -> enable spring to automatically inject the dependencies of the beans
+                                    without manual wiring
+
+@Component
+class Laptop {
+
+    @Autowired
+    Hardrive hardrive;
+
+    @Autowired
+    Processor processor;
+
+    @Autowired
+    Fan fan;
+
+    @Autowired
+    Camera camera;
+
+}
+
+
+Spring will scan for all the beans in IOC container -> it will try to get the shared singleton instance
+
+
+
+-> Constructor Injection and Setter Injection
+
+
+
+
+
