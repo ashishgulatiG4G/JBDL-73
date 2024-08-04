@@ -1,0 +1,184 @@
+1. Maven
+2. Client-Server
+3. Embedded Server code (Tomcatt)
+4. Rest API's
+
+
+Server -> API's [Contract]
+
+Server -> Controller [API's]
+
+REST API's
+
+REST [Representational State Transfer]
+    1. Stateless -> Each request is independent, it contains all the info
+    2. Client Server Architecture
+    3. Uniform Interface of HTTP methods [POST, GET, PUT, DELETE] and also status codes
+
+
+    How it works :
+        1. Client make a request [using HTTP methods like POST, GET, PUT, DELETE]
+        2. Server processes the request and generate response
+        3. Server sends the response with status code and in a format like JSON, XML
+
+SOAP [Simple Object Access protocol]
+    -> XML
+    -> supports HTTP but also supports other protocols
+    -> Protocol - based, message oriented
+
+
+CRUD ->
+C -> Create
+R -> Read
+U -> Update
+D -> Delete
+
+HTTP Request Methods ->
+1. GET -> Generally used for read operation ,i.e, operations should not change the data on server
+2. POST -> Create/Write new data
+3. PUT -> Generally used for update ops
+4. DELETE -> Deleting the data
+5. PATCH -> Sending few of the fields (few columns will be modified)
+
+
+@RestController will make a java class as a rest controller
+Spring Boot will consider these classes as handlers for API's
+
+@GetMapping -> This annotation will make a function act as a HTTP GET request handler
+@PostMapping
+
+
+NOTE -> You can't have 2 api's with same path
+
+
+
+Two common ways to pass data to a REST API endpoint (in the URL itself)->
+1. Path Variable
+    Embedded in URL
+    /{name} or /{id}
+    Ex - Get a specific user -> getUserWithId -> /users/{userId}
+
+
+2. Request Params
+    Appended to a URL after a question mark ?
+    Used for filtering, sorting, pagination
+    Ex - Get a list of users with some filter, name = john & age = 25
+        /users?name=john&age=25
+
+3. @RequestBody -> json type request body
+We will cover
+
+
+
+Class-10
+
+- Metadata, that provides data about a program
+- It is used to provide extra info about a program
+- It doesn't change the action of compiled program
+
+Spring Boot annotations -> provide extra info about a program
+
+Spring + Boot -> Spring framework + Bootstrapping
+
+	1. @SpringBootApplication -> 3 annotations,
+		1. @EnableAutoConfiguration -> Enables spring boot auto configuration, automatically configures
+							beans based on classpath dependencies
+		2. @ComponentScan -> Tells spring to scan for components, service, repo, controller
+							in all the packages
+		3. @Configuration -> Marks a class as source for beans
+
+
+		Beans -> [java objects] managed by Spring IOC container
+			How to create them -> @Bean, by defining the class as @Compnent [Automatic]
+
+
+    2. @RestController -> Spring Boot will consider these classes as handlers for API's
+        @Controller + @ResponseBody
+
+    3. @RequestMapping -> @GetMapping, @PostMapping etc
+    4. @RequestBody -> Maps the request body to an object [Json type request body]
+    5. @ReponseBody
+    6. PathVariable
+    7, RequestParam
+    8. Autowired -> automatically inject dependencies
+    9, Service
+    10, Repository
+    11, Component
+
+    12. @ConditionalOnProperty
+
+    Test annotations -> RunWith, SpringBootTest, MockBean
+
+
+
+
+
+Client -> Server [Application + DB]
+
+MVC pattern -> Model, View and Controller
+
+Controller [API's] -> Service [Business logic] -> Repository [Dao] -> Database
+Accepts client req         Business logic              Make DB req
+Returns client resp                                    Return db resp
+
+Repo object first -> Service object -> Controller
+
+
+
+
+Lombok Annotations -> Automatically generate code based on annotated elements;
+@AllArgsConstructor, @Getter, @Setter, @Data, @ToString
+@Slf4j
+
+
+
+
+Postman -> Client to test API's
+
+
+curl -> used to testing API's using command line / terminal
+
+
+Different types of environemnt->
+
+1. Local Environment (Dev)
+2. Testing Environment
+3. Staging environment (Pre Prod)
+4. Productions Environment
+
+    1. Debugging
+    2. Performance Testing / Regression Testing / Load Testing
+    3. Analytics
+
+Spring profiles -> Feature of spring, it allows to define different set of configurations
+    for diff environments
+     - Add profile on a bean -> mapping the bean to a specific profile
+     - Set profiles ->
+            1. ConfigurableEnvironment
+            2. JVM system param like -Dspring.profiles.active=dev
+            3. Environment variable
+            4. For tests -> @ActiveProfile
+     - Get Active profiles
+            1. Using Environment
+            2. @Value
+
+
+#Sql
+#   -> for local env -> need 50GBs -> some credentials
+#   -> for production env -> need 1TB -> some credentials
+
+
+Different type of logs ->
+
+1. TRACE -> Detailed INFO about app behaviour, method entry and exit point -> Lowest Severity
+2. DEBUG -> During dev and testing
+3. INFO logs ->
+4. WARN logs -> There are some issues int he code but not causing any prob right now, but they
+        will in future
+5. ERROR -> Identify and address issues, error logs -> stacktraces, error code -> HIGHEST PRIORITY
+
+If you define logging level to a type, only that level and more severe logs will be diplayed
+
+
+
+
