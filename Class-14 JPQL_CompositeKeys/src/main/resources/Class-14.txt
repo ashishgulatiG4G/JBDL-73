@@ -1,0 +1,23 @@
+Every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property
+
+
+Composite Keys
+
+-> Combination of two or more columns in a table -> Id
+-> Instead of using single column primary key -> Relying on multiple attributes
+
+-> Multiple Columns
+-> IdClass
+
+
+
+JPQL -> Java Persistence Query Language
+Platform independent object oriented query language
+
+
+SELECT clause
+FROM clause
+WHERE clause
+GROUP BY clause
+HAVING clause
+ORDER BY clause
