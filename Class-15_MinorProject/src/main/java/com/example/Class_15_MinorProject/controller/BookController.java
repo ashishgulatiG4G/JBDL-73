@@ -1,12 +1,13 @@
 package com.example.Class_15_MinorProject.controller;
 
-import com.example.Class_15_MinorProject.dto.CreateAdminRequest;
+import com.example.Class_15_MinorProject.dto.BookResponse;
 import com.example.Class_15_MinorProject.dto.CreateBookRequest;
-import com.example.Class_15_MinorProject.dto.GetBookResponse;
+import com.example.Class_15_MinorProject.dto.SearchBookResponse;
 import com.example.Class_15_MinorProject.dto.SearchRequest;
 import com.example.Class_15_MinorProject.models.Book;
 import com.example.Class_15_MinorProject.service.BookService;
 import jakarta.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@Slf4j
 @RequestMapping("/book")
 public class BookController {
 
@@ -34,19 +36,22 @@ public class BookController {
     }
 
     @GetMapping("/search")
-    // TODO - convert into dto
-    public List<Book> getBooks(@RequestBody @Valid SearchRequest searchRequest) {
+    public SearchBookResponse getBooks(@RequestBody @Valid SearchRequest searchRequest) {
         try {
-            return bookService.findBook(searchRequest.getSearchKey(), searchRequest.getSearchValue());
+            List<Book> bookList = bookService.findBook(
+                    searchRequest.getSearchKey(),
+                    searchRequest.getSearchValue());
+            // TODO - Remove this logic from here and add in some dto
+            List<BookResponse> bookResponseList = new ArrayList<>();
+            for(Book book : bookList) {
+                bookResponseList.add(book.to());
+            }
+            return new SearchBookResponse(bookResponseList);
         } catch (Exception e) {
-            return new ArrayList<>();
+            log.error(e.getMessage());
+            return new SearchBookResponse();
         }
     }
-
-
-    // TODO - delete a book
-
-
 }
 
 // get book based on some genre

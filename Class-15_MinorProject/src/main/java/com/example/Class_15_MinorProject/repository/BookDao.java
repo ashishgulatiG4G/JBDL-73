@@ -8,6 +8,9 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface BookDao extends JpaRepository<Book, Integer> {
+    // FindByAttr1(value)
+    // Select * from book where attr1 = "value"
+
     List<Book> findByGenre(Genre genre);
     List<Book> findByName(String bookName);
 

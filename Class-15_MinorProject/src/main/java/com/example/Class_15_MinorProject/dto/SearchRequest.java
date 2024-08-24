@@ -21,5 +21,6 @@ public class SearchRequest {
 // [genre, "FICTIONAL"]
 // [name, "Harry Potter"]
 // [id, 1]
+// [author_name, ""]
 
 

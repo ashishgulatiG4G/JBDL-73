@@ -15,6 +15,10 @@ public class AdminService {
         adminDao.save(admin);
     }
 
+    public Admin findAdmin(Integer adminId) {
+        return adminDao.findById(adminId).orElse(null);
+    }
+
 
 
 }

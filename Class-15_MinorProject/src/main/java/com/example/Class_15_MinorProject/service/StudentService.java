@@ -14,4 +14,14 @@ public class StudentService {
     public void createOrUpdate(Student student) {
         studentDao.save(student);
     }
+
+    public Student findStudent(String searchKey, String searchValue) throws Exception {
+        return switch(searchKey) {
+            case "email" -> studentDao.findStudentByEmail(searchValue);
+            case "rollNumber" -> studentDao.findStudentByRollNumber(searchValue);
+            case "id" ->
+                studentDao.findById(Integer.parseInt(searchValue)).orElse(new Student());
+            default -> throw new Exception("Search key is not valid: " + searchKey);
+        };
+    }
 }

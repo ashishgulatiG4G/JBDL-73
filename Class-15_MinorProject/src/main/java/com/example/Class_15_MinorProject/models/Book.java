@@ -1,5 +1,6 @@
 package com.example.Class_15_MinorProject.models;
 
+import com.example.Class_15_MinorProject.dto.BookResponse;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -49,6 +50,22 @@ public class Book {
     @OneToMany(mappedBy = "transaction_book")
     private List<Transaction> transactionList;
 
+    // model -> dto conversion
+    public BookResponse to() {
+        return BookResponse.builder()
+                .id(this.id)
+                .name(this.name)
+                .book_student(this.book_student)
+                .book_author(this.book_author)
+                .genre(this.genre)
+                .createdOn(this.createdOn)
+                .updatedOn(this.updatedOn)
+                .price(this.price)
+                .build();
+    }
+
+
+
 
 }
 
@@ -56,6 +73,9 @@ public class Book {
 
 
 // Say you need All the books written by an author whose email = xyz@abc.com
+
+
+//Select * from book where author_name=
 
 
 // Select * from book where id = (Select id from author where email = xyz@abc.com)
