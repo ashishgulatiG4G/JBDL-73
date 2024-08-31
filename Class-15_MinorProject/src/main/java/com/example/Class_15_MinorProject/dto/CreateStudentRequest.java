@@ -2,15 +2,14 @@ package com.example.Class_15_MinorProject.dto;
 
 import com.example.Class_15_MinorProject.models.Student;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class CreateStudentRequest {
 
 
@@ -20,7 +19,7 @@ public class CreateStudentRequest {
     private String email;
     @NotBlank
     private String rollNumber;
-    @NotBlank
+    @NotNull
     private Integer age;
 
     public Student to() {

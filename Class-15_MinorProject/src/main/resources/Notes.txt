@@ -38,3 +38,65 @@ mappedBy property -> specified the name of attribute (fk), it is used in relatio
 @Valid ->
 
 When it fails, you will get 400 (Bad Request)
+
+
+
+
+
+
+
+
+
+
+
+CSV uplaod
+
+// CSV -> Comma separated values
+
+// We have records for a student entity (in the form of csv),
+// we need to parse that file and save it in the DB
+// Clients will upload csv in our app frontend
+// We need an api which can handle this file upload and also parsing of csv and then storing records in our DB
+
+
+
+
+Junit ->
+
+
+Testing ->
+    1. Manual
+    2. Automated
+
+
+
+Junit -> @Test -> on top of every test method
+         @Test(timeout=100) -> test should be timed out after 100 ms
+         @BeforeClass -> it will get executed once before starting all the tests
+         @Before -> invoked before each test
+
+         @After
+         @AfterClass
+
+
+         Assert class ->
+         assertEquals(boolean expected, boolean actual)
+
+         assertTrue(condition)
+
+
+Mockito -> Its a mocking framework - used along with Junit for writing tests / mocking
+        Mocking -> Process of developing the objects of dependent classes
+
+
+
+@Mock -> Mock objects -> dummy or clone objects of real objects, used in testing
+
+
+@InjectMock ->
+
+
+Isolated unit test, where we dont need full spring context -> @Mock
+
+Mock  specific beans along with dependency injection
+

@@ -19,7 +19,6 @@ public class TransactionController {
     @Autowired
     TransactionService transactionService;
 
-
     @PostMapping("/initiate")
     public ResponseEntity<String> initiateTxn(@RequestBody @Valid
                               InitiateTransactionRequest initiateTransactionRequest){
@@ -31,8 +30,6 @@ public class TransactionController {
                     .body(e.getMessage());
         }
     }
-
-
 }
 
 

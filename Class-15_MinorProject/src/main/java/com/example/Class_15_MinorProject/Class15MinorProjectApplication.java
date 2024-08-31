@@ -1,6 +1,8 @@
 package com.example.Class_15_MinorProject;
 
+import com.example.Class_15_MinorProject.models.Admin;
 import com.example.Class_15_MinorProject.models.Student;
+import com.example.Class_15_MinorProject.repository.AdminDao;
 import com.example.Class_15_MinorProject.repository.StudentDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Class15MinorProjectApplication implements CommandLineRunner {
 
 	private static final Logger log = LoggerFactory.getLogger(Class15MinorProjectApplication.class);
-	@Autowired
-	StudentDao studentDao;
+//	@Autowired
+//	AdminDao adminDao;
 
 
 	public static void main(String[] args) {
@@ -26,13 +28,11 @@ public class Class15MinorProjectApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		log.info("Here while run");
-//		Student student = Student.builder()
-//				.name("ABC")
-//				.email("xyz@gmail.com")
-//				.rollNumber("2k24/CO/01")
-//				.age(18)
+//		Admin admin = Admin.builder()
+//				.name("Manish")
+//				.email("manish1@gmail.com")
 //				.build();
 //
-//		studentDao.save(student);
+//		adminDao.save(admin);
 	}
 }

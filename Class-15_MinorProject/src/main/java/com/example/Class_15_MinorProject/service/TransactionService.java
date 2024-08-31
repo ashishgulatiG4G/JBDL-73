@@ -132,7 +132,7 @@ public class TransactionService {
             throw new Exception("Invalid book");
         }
 
-// 2. Get the corresponding issue transaction
+        // 2. Get the corresponding issue transaction
         Transaction issuanceTransaction = transactionDao.findTransactionByStudentBookAndTransactionType(
                 student, book, TransactionType.ISSUE
         );
@@ -155,7 +155,7 @@ public class TransactionService {
 
             transactionDao.save(transaction);
 
-//        / 5. Assign book to student
+//         5. Assign book to student
             book.setBook_student(null);
             bookService.createOrUpdateBook(book);
 // 6. Update the status
