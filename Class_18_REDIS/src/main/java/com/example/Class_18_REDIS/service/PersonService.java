@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonService {
@@ -32,6 +35,10 @@ public class PersonService {
         return key;
     }
 
+    public Person getByKey(String key) {
+        return this.redisTemplate.opsForValue().get(key);
+    }
+
 
     public void lpush(Person person) {
         redisTemplate.opsForList().leftPush("person_list", person);
@@ -43,7 +50,12 @@ public class PersonService {
     }
 
 
+    public List<Person> get() {
+        Set<String> keys = this.redisTemplate.keys("person:*");
 
-
-
+        assert keys != null;
+        return keys.stream().map(
+                        this::getByKey)
+                .toList();
+    }
 }

@@ -1,0 +1,5 @@
+
+
+Redis Client                            ------>  Redis Server [host, port, pass]
+
+redis-cli / spring boot application       ->    redis-cli -h host -p port -a pass
