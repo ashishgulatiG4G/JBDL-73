@@ -1,0 +1,123 @@
+-Entities ->
+
+Admin
+Author
+Book
+Student
+Transaction
+
+-Relationships->
+
+Author      [1:n] Book           *Assuming a book can have only one author
+Student     [1:n] Book
+Transaction [n:1] Student
+Transaction [n:1] Admin
+Transaction [n:1] Book
+
+
+-Multiple copies of same book will have diff ids
+- Student can't request to return a book which he has not just issued
+- Max limit on number of books a student can hold at any moment
+
+Issue Request -> admin approves it -> transaction will be created
+
+Fine calculation in transaction
+
+
+
+
+in sql / relational DB -> There is no support of storing lists
+    Foreign key
+
+
+@JoinColumn -> Specifies the foreign key column
+
+mappedBy property -> specified the name of attribute (fk), it is used in relationship owner entity
+
+
+@Valid ->
+
+When it fails, you will get 400 (Bad Request)
+
+
+
+
+
+
+
+
+
+
+
+CSV uplaod
+
+// CSV -> Comma separated values
+
+// We have records for a student entity (in the form of csv),
+// we need to parse that file and save it in the DB
+// Clients will upload csv in our app frontend
+// We need an api which can handle this file upload and also parsing of csv and then storing records in our DB
+
+
+
+
+Junit ->
+
+
+Testing ->
+    1. Manual
+    2. Automated
+
+
+
+Junit -> @Test -> on top of every test method
+         @Test(timeout=100) -> test should be timed out after 100 ms
+         @BeforeClass -> it will get executed once before starting all the tests
+         @Before -> invoked before each test
+
+         @After
+         @AfterClass
+
+
+         Assert class ->
+         assertEquals(boolean expected, boolean actual)
+
+         assertTrue(condition)
+
+
+Mockito -> Its a mocking framework - used along with Junit for writing tests / mocking
+        Mocking -> Process of developing the objects of dependent classes
+
+
+
+@Mock -> Mock objects -> dummy or clone objects of real objects, used in testing
+
+
+@InjectMock ->
+
+
+Isolated unit test, where we dont need full spring context -> @Mock
+
+Mock  specific beans along with dependency injection
+
+
+
+
+
+
+
+
+SecurityContextHolder [UsernamePasswordAuthenticationToken[Principal and credentials]] <---
+
+DaoAuthenticationProvider on successful authentication
+
+
+
+
+Cache
+
+
+when i am fetching student details
+when
+
+
