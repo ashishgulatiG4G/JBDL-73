@@ -19,13 +19,13 @@ public class Class19SpringSecurityApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user = User.builder()
-				.username("ashish")
-				.password("1234")
-				.roles("SUPERUSER,ADMIN")
-				.build();
+//		User user = User.builder()
+//				.username("ashish")
+//				.password("1234")
+//				.roles("ADMIN")
+//				.build();
 
-		userService.saveUser(user);
+//		userService.saveUser(user);
 
 	}
 }
