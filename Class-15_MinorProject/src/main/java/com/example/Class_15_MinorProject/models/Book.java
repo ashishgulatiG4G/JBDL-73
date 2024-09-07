@@ -27,11 +27,11 @@ public class Book {
     // this is our foreign key
     @ManyToOne
     @JoinColumn
-    private Author book_author;
+    private Author author;
 
      @ManyToOne
      @JoinColumn
-     private Student book_student;
+     private Student student;
 
 
     // Genre -> Enum for genre
@@ -47,7 +47,7 @@ public class Book {
     private Date updatedOn;
 
     //  n number of transactions
-    @OneToMany(mappedBy = "transaction_book")
+    @OneToMany(mappedBy = "book")
     private List<Transaction> transactionList;
 
     // model -> dto conversion
@@ -55,8 +55,8 @@ public class Book {
         return BookResponse.builder()
                 .id(this.id)
                 .name(this.name)
-                .book_student(this.book_student)
-                .book_author(this.book_author)
+                .student(this.student)
+                .author(this.author)
                 .genre(this.genre)
                 .createdOn(this.createdOn)
                 .updatedOn(this.updatedOn)

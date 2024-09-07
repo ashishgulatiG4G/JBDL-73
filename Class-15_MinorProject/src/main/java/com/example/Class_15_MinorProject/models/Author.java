@@ -33,7 +33,7 @@ public class Author {
     // What type of relationship it is
     // List<Book>
 
-    @OneToMany(mappedBy = "book_author")
+    @OneToMany(mappedBy = "author")
     private List<Book> bookList;
 
 

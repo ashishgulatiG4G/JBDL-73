@@ -28,7 +28,7 @@ public class Admin {
     // n transactions here
     // What type of relationship it is
 
-    @OneToMany(mappedBy = "transaction_admin")
+    @OneToMany(mappedBy = "admin")
     List<Transaction> transactionList;
 
 }

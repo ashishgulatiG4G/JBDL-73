@@ -33,13 +33,13 @@ public class Transaction {
 
     @ManyToOne
     @JoinColumn
-    private Admin transaction_admin;
+    private Admin admin;
 
     @ManyToOne
     @JoinColumn
-    private Book transaction_book;
+    private Book book;
 
     @ManyToOne
     @JoinColumn
-    private Student transaction_student;
+    private Student student;
 }

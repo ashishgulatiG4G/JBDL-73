@@ -35,7 +35,7 @@ public class CreateBookRequest {
         return Book.builder()
                 .name(this.name)
                 .genre(this.genre)
-                .book_author(author)
+                .author(author)
                 .build();
     }
 

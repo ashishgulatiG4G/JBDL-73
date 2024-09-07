@@ -23,10 +23,10 @@ public class BookService {
 
     public void createOrUpdateBook(Book book) {
         // Get or create the author using author details
-        Author bookAuthor = authorService.getOrCreate(book.getBook_author());
+        Author bookAuthor = authorService.getOrCreate(book.getAuthor());
 
         // set the author
-        book.setBook_author(bookAuthor);
+        book.setAuthor(bookAuthor);
 
         // Save the book
         bookDao.save(book);

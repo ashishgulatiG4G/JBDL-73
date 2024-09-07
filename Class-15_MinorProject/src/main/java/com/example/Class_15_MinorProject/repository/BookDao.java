@@ -14,7 +14,7 @@ public interface BookDao extends JpaRepository<Book, Integer> {
     List<Book> findByGenre(Genre genre);
     List<Book> findByName(String bookName);
 
-    @Query("Select b from Book b, Author a where b.book_author.id = a.id and a.name = ?1")
+    @Query("Select b from Book b, Author a where b.author.id = a.id and a.name = ?1")
     List<Book> findByAuthor_Name(String authorName);
 
 }

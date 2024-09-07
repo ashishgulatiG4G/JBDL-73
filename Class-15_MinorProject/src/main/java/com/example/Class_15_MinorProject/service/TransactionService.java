@@ -64,8 +64,8 @@ public class TransactionService {
             throw new Exception("Invalid book");
         }
 // 2. Validate if book is available or not => If book is already issue on someone else's name
-        if(book.getBook_student() != null) {
-            throw new Exception("This book is already issued to " + book.getBook_student().getName());
+        if(book.getStudent() != null) {
+            throw new Exception("This book is already issued to " + book.getStudent().getName());
         }
 
 //  3.  Validate if the book can be issued to a person or not => We need to check if student has issue limit
@@ -74,34 +74,34 @@ public class TransactionService {
             throw new Exception("Issue limit reached for this student");
         }
 
-    Transaction transaction = null;
-    try {
-        transaction = Transaction.builder()
-                .transactionId(UUID.randomUUID().toString())
-                .transaction_student(student)
-                .transaction_book(book)
-                .transaction_admin(admin)
-                .transactionStatus(TransactionStatus.PENDING)
-                .transactionType(TransactionType.ISSUE)
-                .build();
+        Transaction transaction = null;
+        try {
+            transaction = Transaction.builder()
+                    .transactionId(UUID.randomUUID().toString())
+                    .student(student)
+                    .book(book)
+                    .admin(admin)
+                    .transactionStatus(TransactionStatus.PENDING)
+                    .transactionType(TransactionType.ISSUE)
+                    .build();
 
 // 4. Make entry in the trans table
-        transactionDao.save(transaction);
+            transactionDao.save(transaction);
 
 // 5. Assign book to student
-        book.setBook_student(student);
-        bookService.createOrUpdateBook(book);
+            book.setStudent(student);
+            bookService.createOrUpdateBook(book);
 // 6. Update the status
-        transaction.setTransactionStatus(TransactionStatus.SUCCESS);
-    } catch (Exception e) {
-        assert transaction != null;
-        transaction.setTransactionStatus(TransactionStatus.FAILURE);
-    } finally {
-        assert transaction != null;
-        transactionDao.save(transaction);
-    }
+            transaction.setTransactionStatus(TransactionStatus.SUCCESS);
+        } catch (Exception e) {
+            assert transaction != null;
+            transaction.setTransactionStatus(TransactionStatus.FAILURE);
+        } finally {
+            assert transaction != null;
+            transactionDao.save(transaction);
+        }
 
-    return transaction.getTransactionId();
+        return transaction.getTransactionId();
 
     }
 
@@ -133,7 +133,7 @@ public class TransactionService {
         }
 
         // 2. Get the corresponding issue transaction
-        Transaction issuanceTransaction = transactionDao.findTransactionByStudentBookAndTransactionType(
+        Transaction issuanceTransaction = transactionDao.findTransactionByStudentAndBookAndTransactionTypeOrderByIdDesc(
                 student, book, TransactionType.ISSUE
         );
 
@@ -145,9 +145,9 @@ public class TransactionService {
 
             transaction = Transaction.builder()
                     .transactionId(UUID.randomUUID().toString())
-                    .transaction_student(student)
-                    .transaction_book(book)
-                    .transaction_admin(admin)
+                    .student(student)
+                    .book(book)
+                    .admin(admin)
                     .fine(fine)
                     .transactionStatus(TransactionStatus.PENDING)
                     .transactionType(TransactionType.RETURN)
@@ -156,7 +156,7 @@ public class TransactionService {
             transactionDao.save(transaction);
 
 //         5. Assign book to student
-            book.setBook_student(null);
+            book.setStudent(null);
             bookService.createOrUpdateBook(book);
 // 6. Update the status
             transaction.setTransactionStatus(TransactionStatus.SUCCESS);
@@ -206,8 +206,4 @@ public class TransactionService {
         return 0;
     }
 
-
-
 }
-
-

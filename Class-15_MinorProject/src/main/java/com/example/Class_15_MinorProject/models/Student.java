@@ -37,10 +37,10 @@ public class Student {
     @UpdateTimestamp
     private Date updatedOn;
 
-    @OneToMany(mappedBy = "book_student")
+    @OneToMany(mappedBy = "student")
     private List<Book> bookList;
 
-    @OneToMany(mappedBy = "transaction_student")
+    @OneToMany(mappedBy = "student")
     private List<Transaction> transactionList;
 
     public SearchStudentResponse to() {

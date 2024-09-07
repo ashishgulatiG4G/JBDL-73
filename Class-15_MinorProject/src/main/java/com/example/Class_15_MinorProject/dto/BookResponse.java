@@ -25,9 +25,9 @@ public class BookResponse {
 
     private String name;
 
-    private Author book_author;
+    private Author author;
 
-    private Student book_student;
+    private Student student;
 
     private Genre genre;
 
